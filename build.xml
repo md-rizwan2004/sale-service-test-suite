@@ -5,7 +5,9 @@
 			      <pathelement location="bin"/>
 			</classpath>
 			<formatter type="plain" usefile="false" />
-			<test name="dk.semler.ws.vehiclesalecalculator.v201412.testsuite.VehicleSaleCalculatorSuite" />
+			<test name="dk.semler.ws.vehiclesalecalculator.v201412.testsuite.VehicleSaleCalculatorSuite" outfile="report">
+				<formatter type="xml" />
+			</test>
 		</junit>
 	</target>
 </project>
