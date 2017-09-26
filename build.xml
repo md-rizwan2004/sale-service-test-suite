@@ -1,7 +1,7 @@
 <project name="testproject" basedir="." default="test">
 	<target name="test">
 		<junit printsummary="yes" haltonfailure="yes">
-			<test name="src.dk.semler.ws.vehiclesalecalculator.v201412.testsuite.VehicleSaleCalculatorSuite" />
+			<test name="src/dk/semler/ws/vehiclesalecalculator/v201412/testsuite/VehicleSaleCalculatorSuite" />
 		</junit>
 	</target>
 </project>
