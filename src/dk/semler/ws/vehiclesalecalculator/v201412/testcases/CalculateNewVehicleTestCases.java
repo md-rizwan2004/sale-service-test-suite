@@ -27,7 +27,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import dk.semler.ws.infrastructure.service.util.ServiceEnvironment;
+//import dk.semler.ws.infrastructure.service.util.ServiceEnvironment;
 import dk.semler.ws.vehiclesalecalculator.v201412.calculatenewvehicle.request.CALCULATIONTYPEType;
 import dk.semler.ws.vehiclesalecalculator.v201412.calculatenewvehicle.request.ECONOMYType;
 import dk.semler.ws.vehiclesalecalculator.v201412.calculatenewvehicle.request.VEHICLEType;
@@ -94,8 +94,8 @@ public class CalculateNewVehicleTestCases {
 		Service service = Service.create(CalculateNewVehicleTestCases.class.getResource("/client/VehicleSaleCalculator.v201412.wsdl"), qname);
 		vehicleSaleCalculatorService = service.getPort(XMLService.class);
 		BindingProvider bp = (BindingProvider) vehicleSaleCalculatorService;
-			
-		if (ServiceEnvironment.isProduction()) {
+		bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, "http://testesb.semlernet.dk/xs/201412/VehicleSaleCalculator");
+		/*if (ServiceEnvironment.isProduction()) {
 			bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, "http://prodesb.semlernet.dk/xs/201412/VehicleSaleCalculator");
 		} else if (ServiceEnvironment.isTest()) {
 			bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, "http://testesb.semlernet.dk/xs/201412/VehicleSaleCalculator");			
@@ -105,7 +105,7 @@ public class CalculateNewVehicleTestCases {
 			bp.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, "http://testesb.semlernet.dk/xs/201412/VehicleSaleCalculator");	
 		} else {
 			throw new Exception("Could not identify environment");
-		}
+		}*/
 
 		jaxbContextInput = JAXBContext.newInstance(dk.semler.ws.vehiclesalecalculator.v201412.calculatenewvehicle.request.MESSAGE.class);
 		jaxbContextOutput = JAXBContext.newInstance(dk.semler.ws.vehiclesalecalculator.v201412.calculatenewvehicle.response.MESSAGE.class);
