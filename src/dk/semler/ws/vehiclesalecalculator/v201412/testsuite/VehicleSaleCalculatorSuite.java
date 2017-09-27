@@ -5,7 +5,6 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import dk.semler.ws.vehiclesalecalculator.v201412.testcases.CalculateNewVehicleTestCases;
-import dk.semler.ws.vehiclesalecalculator.v201412.testcases.CalculateUsedVehicleTestCases;
 
 //=====================================================
 //=    test suite to run both test classes			  =
@@ -13,8 +12,7 @@ import dk.semler.ws.vehiclesalecalculator.v201412.testcases.CalculateUsedVehicle
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
-	CalculateNewVehicleTestCases.class,
-	CalculateUsedVehicleTestCases.class 
+	CalculateNewVehicleTestCases.class
 })
 public class VehicleSaleCalculatorSuite {
 
